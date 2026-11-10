@@ -11,7 +11,7 @@ import sys
 import time
 
 from benchmark_throughput import simulate_stream_latency_benchmark
-from benchmark_risk_coverage import run_all_evaluations
+from benchmark_risk_coverage import run_sota_gate_evaluation
 
 PORT = 8090
 
@@ -44,7 +44,7 @@ class AuditHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             report = simulate_stream_latency_benchmark()
             self._send_json(200, report)
         elif self.path == "/audit/benchmark/risk":
-            report = run_all_evaluations(episodes_count=100)
+            report = run_sota_gate_evaluation(episodes_count=100)
             self._send_json(200, report)
         elif self.path == "/audit/status":
             self._send_json(200, {
