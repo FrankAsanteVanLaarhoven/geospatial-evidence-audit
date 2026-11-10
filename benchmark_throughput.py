@@ -58,6 +58,8 @@ def simulate_stream_latency_benchmark(
     gate_passed = (p95 < 2000.0)  # p95 ingest-to-visible < 2.0s
 
     return {
+        "benchmark_type": "SYNTHETIC_LABORATORY_FIXTURE_SCALED",
+        "production_claim": "UNVERIFIED_PENDING_15_MIN_DEPLOYMENT_TRIAL",
         "target_rate_events_per_sec": target_rate_events_per_sec,
         "actual_rate_events_per_sec": round(actual_rate, 2),
         "total_events_processed": total_events,
@@ -71,6 +73,7 @@ def simulate_stream_latency_benchmark(
         },
         "gate_threshold_ms": 2000.0,
         "gate_passed": gate_passed,
+        "laboratory_notes": "Rapid 3-second scaled harness with synthetic 45-105ms jitter. Operational p95 requires 15-minute 50-subscriber trial."
     }
 
 

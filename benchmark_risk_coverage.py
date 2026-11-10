@@ -207,12 +207,17 @@ def run_sota_gate_evaluation():
     )
 
     return {
+        "benchmark_type": "SYNTHETIC_LABORATORY_FIXTURE_300_EPISODES",
+        "production_claim": "UNVERIFIED_PENDING_EXTERNAL_TRAJECTORIES",
         "episodes_count": len(episodes),
         "model_performance": results,
         "strongest_baseline": strongest_baseline,
         "relative_risk_reduction": round(rel_reduction, 4),
         "bootstrap_ci_95": bootstrap,
+        "demonstrator_coverage_achieved": proposed_perf["coverage"],
+        "target_matched_coverage": 0.80,
         "gate_passed": gate_passed,
+        "status": "PRELIMINARY_FIXTURE_EVALUATION (Coverage 67.3% vs 80% target)"
     }
 
 
