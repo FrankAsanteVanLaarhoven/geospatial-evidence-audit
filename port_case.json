@@ -1,0 +1,12 @@
+{
+  "fixture": "Synthetic port alert. All identities, sources, times, zone membership and grants are illustrative.",
+  "site": "DEMO", "subject": "vessel-A", "zone": "approach-A",
+  "target": "2026-11-06T14:05:00Z", "tolerance_seconds": 5,
+  "cutoffs": ["2026-11-06T14:05:05Z", "2026-11-06T14:05:20Z"],
+  "observations": [
+    {"id":"AIS-1","root":"transponder-A","via":"broker-1","site":"DEMO","subject":"vessel-A","zone":"approach-A","kind":"reported","position":"inside","captured":"2026-11-06T14:04:59Z","available":"2026-11-06T14:05:01Z","permitted":true},
+    {"id":"AIS-2","root":"transponder-A","via":"broker-2","site":"DEMO","subject":"vessel-A","zone":"approach-A","kind":"reported","position":"inside","captured":"2026-11-06T14:04:59Z","available":"2026-11-06T14:05:02Z","permitted":true},
+    {"id":"CAM-OLD","root":"camera-7","via":"camera-service","site":"DEMO","subject":"vessel-A","zone":"approach-A","kind":"observed","position":"inside","captured":"2026-11-06T13:57:51Z","available":"2026-11-06T14:05:03Z","permitted":true},
+    {"id":"CAM-NEW","root":"camera-7","via":"camera-service","site":"DEMO","subject":"vessel-A","zone":"approach-A","kind":"observed","position":"inside","captured":"2026-11-06T14:05:01Z","available":"2026-11-06T14:05:18Z","permitted":true}
+  ]
+}

@@ -1,0 +1,421 @@
+{
+  "description": "24 injected adversarial cases testing Gate D8 (False Live / Staleness Faults). All 24 MUST yield non-current labels.",
+  "fixed_evaluation_time_utc": "2026-11-06T18:51:30Z",
+  "cases": [
+    {
+      "id": "CASE-01-STALE-CAM-FINTRAFFIC",
+      "category": "stale_observation",
+      "expected_status": "stale",
+      "record": {
+        "source_id": "fintraffic",
+        "source_record_id": "C1451601",
+        "layer": "public_cameras",
+        "source_time_or_null": "2026-11-03T07:30:00Z",
+        "source_time_basis": "camera_overlay_stamp",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "camera_still",
+        "delivery_mode": "current_feed",
+        "freshness_status": "current_within_source_policy",
+        "rights_profile": "CC_BY_4.0"
+      }
+    },
+    {
+      "id": "CASE-02-STALE-CAM-ALPINE",
+      "category": "stale_observation",
+      "expected_status": "stale",
+      "record": {
+        "source_id": "asfinag",
+        "source_record_id": "A12-KM102",
+        "layer": "public_cameras",
+        "source_time_or_null": "2026-11-06T15:00:00Z",
+        "source_time_basis": "exif_metadata",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "camera_still",
+        "delivery_mode": "current_feed",
+        "freshness_status": "current_within_source_policy",
+        "rights_profile": "PARTNER_TERMS"
+      }
+    },
+    {
+      "id": "CASE-03-STALE-AIS-GAP",
+      "category": "stale_observation",
+      "expected_status": "stale",
+      "record": {
+        "source_id": "antwerp_vts",
+        "source_record_id": "VESSEL-991",
+        "layer": "vessels",
+        "source_time_or_null": "2026-11-06T17:45:00Z",
+        "source_time_basis": "transponder_clock",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "reported_position",
+        "delivery_mode": "current_feed",
+        "freshness_status": "current_within_source_policy",
+        "rights_profile": "PORT_AUTHORITY"
+      }
+    },
+    {
+      "id": "CASE-04-STALE-ADSB-AIRCRAFT",
+      "category": "stale_observation",
+      "expected_status": "stale",
+      "record": {
+        "source_id": "adsb_lol",
+        "source_record_id": "4b1234",
+        "layer": "aircraft",
+        "source_time_or_null": "2026-11-06T18:40:00Z",
+        "source_time_basis": "transponder_clock",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "reported_position",
+        "delivery_mode": "current_feed",
+        "freshness_status": "current_within_source_policy",
+        "rights_profile": "ODbL"
+      }
+    },
+    {
+      "id": "CASE-05-RESTAMPED-CACHED-IMAGE",
+      "category": "restamped_message",
+      "expected_status": "stale",
+      "record": {
+        "source_id": "camera_broker",
+        "source_record_id": "CAM-CACHE-1",
+        "layer": "public_cameras",
+        "source_time_or_null": "2026-11-06T13:00:00Z",
+        "source_time_basis": "sensor_clock",
+        "retrieved_at_utc": "2026-11-06T18:51:28Z",
+        "kind": "camera_still",
+        "delivery_mode": "current_feed",
+        "freshness_status": "current_within_source_policy",
+        "rights_profile": "PUBLIC_VIEW"
+      }
+    },
+    {
+      "id": "CASE-06-RESTAMPED-BROKER-REBROADCAST",
+      "category": "restamped_message",
+      "expected_status": "stale",
+      "record": {
+        "source_id": "relay_broker_b",
+        "source_record_id": "AIS-REPLAY-10",
+        "layer": "vessels",
+        "source_time_or_null": "2026-11-06T18:30:00Z",
+        "source_time_basis": "transponder_clock",
+        "retrieved_at_utc": "2026-11-06T18:51:29Z",
+        "kind": "reported_position",
+        "delivery_mode": "current_feed",
+        "freshness_status": "current_within_source_policy",
+        "rights_profile": "COMMERCIAL_AIS"
+      }
+    },
+    {
+      "id": "CASE-07-RESTAMPED-HTTP-304-REVALIDATED",
+      "category": "restamped_message",
+      "expected_status": "stale",
+      "record": {
+        "source_id": "paris_webcam",
+        "source_record_id": "PARIS-EIFFEL-1",
+        "layer": "public_cameras",
+        "source_time_or_null": "2026-11-06T16:00:00Z",
+        "source_time_basis": "origin_last_modified",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "camera_still",
+        "delivery_mode": "current_feed",
+        "freshness_status": "current_within_source_policy",
+        "rights_profile": "PUBLIC_VIEW"
+      }
+    },
+    {
+      "id": "CASE-08-RESTAMPED-CLOCK-SKEW-FORWARD",
+      "category": "restamped_message",
+      "expected_status": "unknown",
+      "record": {
+        "source_id": "relay_edge",
+        "source_record_id": "SKEW-99",
+        "layer": "vessels",
+        "source_time_or_null": "2026-11-06T19:55:00Z",
+        "source_time_basis": "unverified_relay_header",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "reported_position",
+        "delivery_mode": "current_feed",
+        "freshness_status": "current_within_source_policy",
+        "rights_profile": "PORT_VTS"
+      }
+    },
+    {
+      "id": "CASE-09-REPLAY-ANTWERP-HISTORICAL",
+      "category": "replay_archive",
+      "expected_status": "historical",
+      "record": {
+        "source_id": "rotsides_antwerp_v1",
+        "source_record_id": "TRIP-355-OBS-104",
+        "layer": "vessels",
+        "source_time_or_null": "2024-01-08T12:00:00Z",
+        "source_time_basis": "archive_timestamp",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "reported_position",
+        "delivery_mode": "snapshot_replay",
+        "freshness_status": "historical",
+        "rights_profile": "CC_BY_4.0"
+      }
+    },
+    {
+      "id": "CASE-10-REPLAY-USGS-SNAPSHOT",
+      "category": "replay_archive",
+      "expected_status": "historical",
+      "record": {
+        "source_id": "usgs",
+        "source_record_id": "us7000twkp",
+        "layer": "earthquakes",
+        "source_time_or_null": "2026-11-06T17:53:25Z",
+        "source_time_basis": "feed_catalog_release",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "reported_event",
+        "delivery_mode": "snapshot_replay",
+        "freshness_status": "historical",
+        "rights_profile": "PUBLIC_DOMAIN"
+      }
+    },
+    {
+      "id": "CASE-11-REPLAY-ADSB-RADAR-ARCHIVE",
+      "category": "replay_archive",
+      "expected_status": "historical",
+      "record": {
+        "source_id": "opensky_historical",
+        "source_record_id": "OS-TRACK-2024",
+        "layer": "aircraft",
+        "source_time_or_null": "2026-05-01T10:00:00Z",
+        "source_time_basis": "research_archive",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "reported_position",
+        "delivery_mode": "snapshot_replay",
+        "freshness_status": "historical",
+        "rights_profile": "ACADEMIC_AGREEMENT"
+      }
+    },
+    {
+      "id": "CASE-12-REPLAY-INTERPOLATED-TRAJECTORY",
+      "category": "replay_archive",
+      "expected_status": "historical",
+      "record": {
+        "source_id": "xdaistin_reconstructor",
+        "source_record_id": "INTERP-GAP-42",
+        "layer": "vessels",
+        "source_time_or_null": "2026-11-06T18:50:00Z",
+        "source_time_basis": "offline_spline",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "propagated_position",
+        "delivery_mode": "snapshot_replay",
+        "freshness_status": "historical",
+        "rights_profile": "DERIVED_ESTIMATE"
+      }
+    },
+    {
+      "id": "CASE-13-MISSING-CLOCK-NULL",
+      "category": "missing_clock",
+      "expected_status": "unknown",
+      "record": {
+        "source_id": "beach_cam_italy",
+        "source_record_id": "BEACH-01",
+        "layer": "public_cameras",
+        "source_time_or_null": null,
+        "source_time_basis": "missing",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "camera_stream",
+        "delivery_mode": "current_feed",
+        "freshness_status": "unknown",
+        "rights_profile": "UNVERIFIED"
+      }
+    },
+    {
+      "id": "CASE-14-MISSING-CLOCK-UNPARSEABLE",
+      "category": "missing_clock",
+      "expected_status": "unknown",
+      "record": {
+        "source_id": "road_cam_presort",
+        "source_record_id": "PRESET-99",
+        "layer": "public_cameras",
+        "source_time_or_null": null,
+        "unparsed_timestamp_stamp": "03.11.2026 07:30",
+        "source_time_basis": "unparsed_ocr_string",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "camera_still",
+        "delivery_mode": "current_feed",
+        "freshness_status": "unknown",
+        "rights_profile": "PUBLIC_VIEW"
+      }
+    },
+    {
+      "id": "CASE-15-CLOCK-CONFLICT-FUTURE-DRIFT",
+      "category": "conflicting_clock",
+      "expected_status": "unknown",
+      "record": {
+        "source_id": "buoy_sensor",
+        "source_record_id": "BUOY-4401",
+        "layer": "vessels",
+        "source_time_or_null": "2026-11-07T02:00:00Z",
+        "source_time_basis": "unsynchronized_rtc",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "reported_position",
+        "delivery_mode": "current_feed",
+        "freshness_status": "unknown",
+        "rights_profile": "PORT_MET"
+      }
+    },
+    {
+      "id": "CASE-16-CLOCK-CONFLICT-NEGATIVE-INTERVAL",
+      "category": "conflicting_clock",
+      "expected_status": "unknown",
+      "record": {
+        "source_id": "harbor_tracker",
+        "source_record_id": "TRK-NEG-1",
+        "layer": "vessels",
+        "source_time_or_null": "2026-11-06T19:00:00Z",
+        "source_time_basis": "out_of_order_header",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "reported_position",
+        "delivery_mode": "current_feed",
+        "freshness_status": "unknown",
+        "rights_profile": "PORT_VTS"
+      }
+    },
+    {
+      "id": "CASE-17-PREDICTION-DEAD-RECKONING",
+      "category": "predicted_position",
+      "expected_status": "historical",
+      "record": {
+        "source_id": "dead_reckoning_engine",
+        "source_record_id": "DR-FLIGHT-88",
+        "layer": "aircraft",
+        "source_time_or_null": "2026-11-06T18:51:30Z",
+        "source_time_basis": "extrapolated_speed_heading",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "propagated_position",
+        "delivery_mode": "current_feed",
+        "freshness_status": "historical",
+        "rights_profile": "DERIVED_MODEL"
+      }
+    },
+    {
+      "id": "CASE-18-PREDICTION-SGP4-STALE-TLE",
+      "category": "predicted_position",
+      "expected_status": "stale",
+      "record": {
+        "source_id": "celestrak",
+        "source_record_id": "NORAD-25544",
+        "layer": "satellites",
+        "source_time_or_null": "2026-11-06T18:51:30Z",
+        "orbital_element_epoch_utc": "2026-11-01T00:00:00Z",
+        "source_time_basis": "sgp4_evaluation_instant",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "propagated_position",
+        "delivery_mode": "current_feed",
+        "freshness_status": "stale",
+        "rights_profile": "PUBLIC_ORBITAL"
+      }
+    },
+    {
+      "id": "CASE-19-PREDICTION-VESSEL-EXTRAPOLATION",
+      "category": "predicted_position",
+      "expected_status": "historical",
+      "record": {
+        "source_id": "kalman_predictor",
+        "source_record_id": "KALMAN-VESSEL-1",
+        "layer": "vessels",
+        "source_time_or_null": "2026-11-06T18:51:30Z",
+        "source_time_basis": "constant_turn_rate_model",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "propagated_position",
+        "delivery_mode": "current_feed",
+        "freshness_status": "historical",
+        "rights_profile": "PROPRIETARY_MODEL"
+      }
+    },
+    {
+      "id": "CASE-20-PREDICTION-GNSS-LOW-SAMPLE",
+      "category": "predicted_position",
+      "expected_status": "unknown",
+      "record": {
+        "source_id": "gpsjam_aggregator",
+        "source_record_id": "H3-HEX-841f",
+        "layer": "gnss_interference",
+        "support_aircraft_count": 2,
+        "source_time_or_null": "2026-11-06T18:00:00Z",
+        "source_time_basis": "rolling_window_24h",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "derived_area",
+        "delivery_mode": "current_feed",
+        "freshness_status": "unknown",
+        "rights_profile": "PUBLIC_METHOD"
+      }
+    },
+    {
+      "id": "CASE-21-OUTAGE-GATEWAY-503",
+      "category": "outage_and_revocation",
+      "expected_status": "offline",
+      "record": {
+        "source_id": "traffic_api",
+        "source_record_id": "CAM-DOWN-503",
+        "layer": "public_cameras",
+        "is_offline": true,
+        "source_time_or_null": null,
+        "source_time_basis": "unavailable",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "camera_still",
+        "delivery_mode": "current_feed",
+        "freshness_status": "offline",
+        "rights_profile": "PUBLIC_VIEW"
+      }
+    },
+    {
+      "id": "CASE-22-OUTAGE-FEED-SILENCE-DROPPED",
+      "category": "outage_and_revocation",
+      "expected_status": "offline",
+      "record": {
+        "source_id": "ais_receiver_station",
+        "source_record_id": "RECEIVER-DISCONNECTED",
+        "layer": "vessels",
+        "is_offline": true,
+        "source_time_or_null": "2026-11-06T18:40:00Z",
+        "source_time_basis": "last_keepalive",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "reported_position",
+        "delivery_mode": "current_feed",
+        "freshness_status": "offline",
+        "rights_profile": "INTERNAL"
+      }
+    },
+    {
+      "id": "CASE-23-RETRACTION-USGS-FALSE-EVENT",
+      "category": "outage_and_revocation",
+      "expected_status": "offline",
+      "record": {
+        "source_id": "usgs",
+        "source_record_id": "us_glitch_cancelled",
+        "layer": "earthquakes",
+        "is_retracted": true,
+        "source_time_or_null": "2026-11-06T18:30:00Z",
+        "source_time_basis": "origin_time",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "reported_event",
+        "delivery_mode": "current_feed",
+        "freshness_status": "offline",
+        "rights_profile": "PUBLIC_DOMAIN"
+      }
+    },
+    {
+      "id": "CASE-24-REVOCATION-TENANT-GRANT-EXPIRED",
+      "category": "outage_and_revocation",
+      "expected_status": "offline",
+      "record": {
+        "source_id": "portcall_secured",
+        "source_record_id": "CARGO-SECURE-9",
+        "layer": "vessels",
+        "permitted": false,
+        "source_time_or_null": "2026-11-06T18:51:25Z",
+        "source_time_basis": "portcall_api",
+        "retrieved_at_utc": "2026-11-06T18:51:30Z",
+        "kind": "reported_position",
+        "delivery_mode": "current_feed",
+        "freshness_status": "offline",
+        "rights_profile": "COMMERCIAL_RESTRICTED"
+      }
+    }
+  ]
+}

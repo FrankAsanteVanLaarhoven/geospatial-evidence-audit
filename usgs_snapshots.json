@@ -1,0 +1,167 @@
+{
+  "provider": "USGS Earthquake Hazards Program",
+  "record_selection": "The six IDs in the earlier hourly feed; only those same IDs are retained from the later daily product. The two products share the USGS upstream.",
+  "time_basis": "The cutoff in this fixture is the feed generation time. Production replay uses a recorded first-available/ingestion time in addition to event, source-revision and publication times.",
+  "snapshots": [
+    {
+      "feed": "past hour",
+      "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson",
+      "feed_generated_utc": "2026-11-06T18:51:30.000Z",
+      "provider_row_count": 6,
+      "records": [
+        {
+          "event_id": "aka2026waefen",
+          "event_time": "2026-11-06T18:42:50.164Z",
+          "revision_time": "2026-11-06T18:43:55.894Z",
+          "lat": 62.399,
+          "lon": -148.086,
+          "depth_km": 41.5,
+          "magnitude": 1.5,
+          "mag_type": "ml",
+          "review_status": "automatic",
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/aka2026waefen"
+        },
+        {
+          "event_id": "nc75463202",
+          "event_time": "2026-11-06T18:10:26.420Z",
+          "revision_time": "2026-11-06T18:12:05.061Z",
+          "lat": 38.9220008850098,
+          "lon": -122.943496704102,
+          "depth_km": 13.5200004577637,
+          "magnitude": 1.08,
+          "mag_type": "md",
+          "review_status": "automatic",
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75463202"
+        },
+        {
+          "event_id": "aka2026waczgd",
+          "event_time": "2026-11-06T18:06:24.049Z",
+          "revision_time": "2026-11-06T18:07:56.083Z",
+          "lat": 62.262,
+          "lon": -150.964,
+          "depth_km": 76.8,
+          "magnitude": 1.9,
+          "mag_type": "ml",
+          "review_status": "automatic",
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/aka2026waczgd"
+        },
+        {
+          "event_id": "nc75463197",
+          "event_time": "2026-11-06T18:04:40.990Z",
+          "revision_time": "2026-11-06T18:06:15.319Z",
+          "lat": 38.8238334655762,
+          "lon": -122.842163085938,
+          "depth_km": 1.76999998092651,
+          "magnitude": 0.76,
+          "mag_type": "md",
+          "review_status": "automatic",
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75463197"
+        },
+        {
+          "event_id": "ci41359359",
+          "event_time": "2026-11-06T17:56:46.520Z",
+          "revision_time": "2026-11-06T18:00:08.814Z",
+          "lat": 33.4145,
+          "lon": -116.6365,
+          "depth_km": 7.19,
+          "magnitude": 0.43,
+          "mag_type": "ml",
+          "review_status": "automatic",
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci41359359"
+        },
+        {
+          "event_id": "us7000twkp",
+          "event_time": "2026-11-06T17:53:25.873Z",
+          "revision_time": "2026-11-06T18:16:30.040Z",
+          "lat": -18.0741,
+          "lon": -178.191,
+          "depth_km": 567.218,
+          "magnitude": 4.3,
+          "mag_type": "mb",
+          "review_status": "reviewed",
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twkp"
+        }
+      ]
+    },
+    {
+      "feed": "past day",
+      "feed_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",
+      "feed_generated_utc": "2026-11-06T22:02:43.000Z",
+      "provider_row_count": 211,
+      "records": [
+        {
+          "event_id": "aka2026waefen",
+          "event_time": "2026-11-06T18:42:50.164Z",
+          "revision_time": "2026-11-06T18:43:55.894Z",
+          "lat": 62.399,
+          "lon": -148.086,
+          "depth_km": 41.5,
+          "magnitude": 1.5,
+          "mag_type": "ml",
+          "review_status": "automatic",
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/aka2026waefen"
+        },
+        {
+          "event_id": "nc75463202",
+          "event_time": "2026-11-06T18:10:26.420Z",
+          "revision_time": "2026-11-06T18:12:05.061Z",
+          "lat": 38.9220008850098,
+          "lon": -122.943496704102,
+          "depth_km": 13.5200004577637,
+          "magnitude": 1.08,
+          "mag_type": "md",
+          "review_status": "automatic",
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75463202"
+        },
+        {
+          "event_id": "aka2026waczgd",
+          "event_time": "2026-11-06T18:06:24.049Z",
+          "revision_time": "2026-11-06T18:07:56.083Z",
+          "lat": 62.262,
+          "lon": -150.964,
+          "depth_km": 76.8,
+          "magnitude": 1.9,
+          "mag_type": "ml",
+          "review_status": "automatic",
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/aka2026waczgd"
+        },
+        {
+          "event_id": "nc75463197",
+          "event_time": "2026-11-06T18:04:40.990Z",
+          "revision_time": "2026-11-06T18:06:15.319Z",
+          "lat": 38.8238334655762,
+          "lon": -122.842163085938,
+          "depth_km": 1.76999998092651,
+          "magnitude": 0.76,
+          "mag_type": "md",
+          "review_status": "automatic",
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75463197"
+        },
+        {
+          "event_id": "ci41359359",
+          "event_time": "2026-11-06T17:56:46.520Z",
+          "revision_time": "2026-11-06T20:37:46.694Z",
+          "lat": 33.4158333333333,
+          "lon": -116.634833333333,
+          "depth_km": 7.33,
+          "magnitude": 0.36,
+          "mag_type": "ml",
+          "review_status": "reviewed",
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci41359359"
+        },
+        {
+          "event_id": "us7000twkp",
+          "event_time": "2026-11-06T17:53:25.873Z",
+          "revision_time": "2026-11-06T18:16:30.040Z",
+          "lat": -18.0741,
+          "lon": -178.191,
+          "depth_km": 567.218,
+          "magnitude": 4.3,
+          "mag_type": "mb",
+          "review_status": "reviewed",
+          "source_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twkp"
+        }
+      ]
+    }
+  ]
+}
