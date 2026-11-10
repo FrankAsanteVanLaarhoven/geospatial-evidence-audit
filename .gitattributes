@@ -1,0 +1,68 @@
+# Check every text file out with LF on every platform.
+* text=auto eol=lf
+
+# Shell launchers must stay LF to run at all.
+*.sh text eol=lf
+
+# Assets Git must never rewrite.
+*.gif binary
+*.png binary
+*.glb binary
+*.wav binary
+*.pbf binary
+
+# ==============================================================================
+# GitHub Linguist Classification Overrides for SpatialForge AI Platform
+# Ensures TypeScript, Rust, Go, Python, and PostGIS dominate repository statistics
+# ==============================================================================
+
+# Exclude all legacy and runtime JavaScript from language breakdown
+*.js linguist-detectable=false
+*.js linguist-vendored=true
+*.mjs linguist-detectable=false
+*.mjs linguist-vendored=true
+**/*.js linguist-detectable=false
+**/*.js linguist-vendored=true
+**/*.mjs linguist-detectable=false
+**/*.mjs linguist-vendored=true
+src/**/*.js linguist-vendored=true
+src/**/*.js linguist-detectable=false
+server/**/*.js linguist-vendored=true
+server/**/*.js linguist-detectable=false
+build/**/*.js linguist-vendored=true
+build/**/*.js linguist-detectable=false
+
+# 1. Primary Frontend & Full-Stack TypeScript
+src/**/*.ts linguist-language=TypeScript linguist-detectable=true
+src/**/*.vue linguist-language=TypeScript linguist-detectable=true
+server/**/*.ts linguist-language=TypeScript linguist-detectable=true
+types/**/*.ts linguist-language=TypeScript linguist-detectable=true
+
+# 2. Rust High-Performance Cryptographic Enclave (Ed25519 & Merkle Trees)
+services/crypto-enclave/**/*.rs linguist-language=Rust linguist-detectable=true
+services/crypto-enclave/Cargo.toml linguist-language=Rust linguist-detectable=true
+
+# 3. Go Core API Gateway & Stealth OSINT Crawler
+services/core-gateway/**/*.go linguist-language=Go linguist-detectable=true
+services/stealth-crawler/**/*.go linguist-language=Go linguist-detectable=true
+
+# 4. Python Sovereign Intelligence Engine & Kinematic Spoofing
+services/python-intelligence/**/*.py linguist-language=Python linguist-detectable=true
+engine/**/*.py linguist-language=Python linguist-detectable=true
+*.py linguist-language=Python linguist-detectable=true
+
+# 5. PostgreSQL + PostGIS Spatial Schema & Telemetry Partitioning
+storage/postgres/*.sql linguist-language=PLpgSQL linguist-detectable=true
+*.sql linguist-language=PLpgSQL linguist-detectable=true
+
+# 6. Vendored Datasets, Build Bundles & Test Specs
+tools/** linguist-vendored
+scripts/** linguist-vendored
+src/data/local_data/** linguist-vendored
+server/providers/cctv/catalogs/** linguist-vendored
+dist/** linguist-vendored
+**/*.test.js linguist-vendored
+**/*.test.mjs linguist-vendored
+**/*.test.ts linguist-vendored
+tests/** linguist-vendored
+public/** linguist-vendored

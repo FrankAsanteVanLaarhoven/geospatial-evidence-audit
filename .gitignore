@@ -1,10 +1,10 @@
 __pycache__/
 *.pyc
-*.pyo
-.pytest_cache/
-.coverage
-htmlcov/
-*.log
 .env
 .env.local
+node_modules/
 .DS_Store
+spatialforge-ai/
+services/
+*.mp4
+storage/

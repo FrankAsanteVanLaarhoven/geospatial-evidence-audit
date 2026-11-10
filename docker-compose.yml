@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  spatialforge-db:
+    image: postgis/postgis:16-3.4
+    container_name: spatialforge-postgis
+    environment:
+      POSTGRES_DB: spatialforge
+      POSTGRES_USER: spatialforge_admin
+      POSTGRES_PASSWORD: spatialforge_secure_dev_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./storage/postgres/init_postgis.sql:/docker-entrypoint-initdb.d/01_init_postgis.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U spatialforge_admin -d spatialforge"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  spatialforge-redis:
+    image: redis:7.2-alpine
+    container_name: spatialforge-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  spatialforge-gateway:
+    build:
+      context: ./services/core-gateway
+      dockerfile: Dockerfile
+    container_name: spatialforge-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: 8080
+      POSTGRES_HOST: spatialforge-db
+      REDIS_HOST: spatialforge-redis
+    depends_on:
+      spatialforge-db:
+        condition: service_healthy
+
+  spatialforge-intelligence:
+    build:
+      context: ./services/python-intelligence
+      dockerfile: Dockerfile
+    container_name: spatialforge-intelligence
+    ports:
+      - "5001:5001"
+    environment:
+      PORT: 5001
+      PYTHONUNBUFFERED: 1
+    depends_on:
+      - spatialforge-redis
+
+  spatialforge-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spatialforge-web
+    ports:
+      - "4173:4173"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 4173
+    depends_on:
+      - spatialforge-gateway
+
+volumes:
+  pgdata:
+  redisdata:

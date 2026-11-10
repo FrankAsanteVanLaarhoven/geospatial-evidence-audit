@@ -582,3 +582,7 @@ def run_space_native_benchmarks() -> dict:
 if __name__ == "__main__":
     report = run_space_native_benchmarks()
     print(json.dumps(report, indent=2))
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9d214c0 (feat(geospatial-evidence): integrate space-native evidence engine, benchmarks, orchestration, and G0 release assurance)
